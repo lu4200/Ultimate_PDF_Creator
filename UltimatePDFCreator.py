@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    UltimatePDFCreator.py                              :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lucas <lucas@student.42.fr>                +#+  +:+       +#+         #
+#    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/31 15:15:28 by lucas             #+#    #+#              #
-#    Updated: 2024/01/31 15:27:36 by lucas            ###   ########.fr        #
+#    Created: 2024/01/27 15:15:28 by lucas             #+#    #+#              #
+#    Updated: 2024/01/31 18:35:09 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ def create_pdf(images):
 root = tk.Tk()
 root.title("Créateur de PDF")
 
-# Label et Entry pour entrer les noms des images
+# label et entry pour entree les noms des images
 label = tk.Label(root, text="Noms des images (séparés par des espaces):")
 label.pack(pady=10)
 
@@ -48,7 +48,7 @@ def process_input():
     images = entry_var.get().split()
     create_pdf(images)
 
-# Bouton pour créer le PDF
+
 create_button = tk.Button(root, text="Créer PDF", command=process_input)
 create_button.pack(pady=20)
 
