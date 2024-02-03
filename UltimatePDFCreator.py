@@ -6,7 +6,7 @@
 #    By: lucas <lucas@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 15:15:28 by lucas             #+#    #+#              #
-#    Updated: 2024/02/03 13:47:56 by lucas            ###   ########.fr        #
+#    Updated: 2024/02/03 13:54:36 by lucas            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ def create_pdf(selected_files, margin_bottom):
 
     print("Le fichier PDF a été créé avec succès.")
     os.remove('temp.pdf')
+    selected_files = []
     root.destroy()
 
 def browse_files():
@@ -54,11 +55,13 @@ root = tk.Tk()
 root.title("Créateur de PDF")
 
 # Vertical window
+
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 root.geometry(f"{int(screen_width/4)}x{int(screen_height)}")
 
 # Margin label & entry
+
 margin_label = tk.Label(root, text="Marge en bas de chaque image (en pixels):")
 margin_label.pack(pady=10)
 
@@ -67,6 +70,7 @@ margin_entry = tk.Entry(root, textvariable=margin_var, width=10)
 margin_entry.pack(pady=10)
 
 # Entry for image paths
+
 label = tk.Label(root, text="Sélectionner les images:")
 label.pack(pady=10)
 
@@ -74,12 +78,13 @@ entry_var = tk.StringVar()
 entry = tk.Entry(root, textvariable=entry_var, width=50, state="disabled")
 entry.pack(pady=10)
 
+# Browse Button
+
 browse_button = tk.Button(root, text="Parcourir", command=browse_files)
 browse_button.pack(pady=10)
 
+# Final button
 
-# Final button
-# Final button
 create_button = tk.Button(root, text="Créer PDF", command=lambda: create_pdf(selected_files, margin_var.get()))
 create_button.pack(pady=20)
 
